@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initail-scale-1.0">
+        <title>Password Reset</title>
+
+        <link rel="stylesheet" href="/style.css">
+
+    </head>
+
+    <body>
+
+        <% if (messages.success) { %>
+            <div class="alert alert-success">
+              <%= messages.success %>
+            </div>
+          <% } %>
+
+        <% if (messages.error) { %>
+            <div class="alert alert-danger">
+              <%= messages.error %>
+            </div>
+          <% } %>
+
+
+        <div class="form-container">
+            <h2>Reset Your Password</h2>
+            <form action="/passreset" method="post">
+                <div class="form-group">
+                    <label for="name">UserName:</label>
+                    <input type="text" name="username" id="name" placeholder="For which user" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="password">New Password:</label>
+                    <input type="password" name="password" id="password" placeholder="Enter new password" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="confirmpassword">Confirm Password:</label>
+                    <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirm your password" required>
+                </div>
+                <button type="submit" class="submit-btn">Reset</button>
+            </form>
+
+        </div>
+    </body>
+</html>
